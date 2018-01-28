@@ -1,1 +1,26 @@
-<p>{{ msg }}</p>
+<form novalidate>
+  <div>
+    <label>NAME</label>
+    <input type="text" ng-model="data.name" required>
+  </div>
+  <div>
+    <label>DATE OF BIRTH</label>
+    <input type="date" ng-model="data.dob" required>
+  </div>
+  <div>
+    <label>NATIONALITY</label>
+    <input type="text" ng-model="data.nationality" required>
+  </div>
+  <div>
+    <label>LOCATION</label>
+    <input type="text" ng-model="data.location" required>
+  </div>
+  <div>
+    <label>GENDER</label>
+    <select ng-model="data.gender"
+            ng-init="data.gender = genderList[0]"
+            ng-options="gender for gender in genderList">
+    </select>
+  </div>
+  <button type="submit" ng-click="save(data)">Submit</button>
+</form>

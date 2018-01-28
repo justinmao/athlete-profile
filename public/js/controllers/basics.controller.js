@@ -3,5 +3,11 @@ angular
   .controller('BasicsCtrl', ['$scope', BasicsCtrl]);
 
 function BasicsCtrl($scope) {
-  $scope.msg = 'Basics Controller';
+
+  $scope.genderList = [
+    'Male',
+    'Female',
+    'Other'
+  ];
+
 }
