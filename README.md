@@ -1,6 +1,6 @@
 # athlete-profile
 
-Working demo is deployed [here](104.236.97.183:8080).
+Working demo is deployed [here](http://104.236.97.183:8080).
 
 This project can be run locally:
 * Install dependencies with `npm install` and `bower install`
