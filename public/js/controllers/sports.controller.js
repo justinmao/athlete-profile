@@ -61,10 +61,6 @@ function SportsCtrl($scope, ProfileService) {
     ProfileService.setSports(data);
   }
 
-  $scope.reset = function() {
-    $scope.data = ProfileService.getSports();
-  }
-
   $scope.addSport = function() {
     $scope.data.push({});
   }
@@ -77,7 +73,12 @@ function SportsCtrl($scope, ProfileService) {
     }
   }
 
+  var reset = function() {
+    $scope.data = ProfileService.getSports();
+    ProfileService.setActivePage('sports');
+  }
+
   // Reset to saved values upon re-entry
-  $scope.reset();
+  reset();
 
 }

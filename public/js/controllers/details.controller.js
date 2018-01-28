@@ -24,6 +24,7 @@ function DetailsCtrl($scope, ProfileService) {
 
   $scope.reset = function() {
     $scope.data = ProfileService.getDetails();
+    ProfileService.setActivePage('details');
   }
 
   // Reset to saved values upon re-entry

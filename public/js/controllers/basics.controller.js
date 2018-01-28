@@ -23,11 +23,12 @@ function BasicsCtrl($scope, ProfileService) {
     ProfileService.setBasics(data);
   }
 
-  $scope.reset = function() {
+  var reset = function() {
     $scope.data = ProfileService.getBasics();
+    ProfileService.setActivePage('basics');
   }
 
   // Reset to saved values upon re-entry
-  $scope.reset();
+  reset();
 
 }

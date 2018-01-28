@@ -1,4 +1,5 @@
 angular.module('athleteProfile', [
+  'navController',
   'basicsController',
   'sportsController',
   'detailsController',

@@ -10,4 +10,10 @@ function SummaryCtrl($scope, ProfileService) {
     ProfileService.submitProfile();
   }
 
+  $scope.reset = function() {
+    ProfileService.setActivePage('summary');
+  }
+
+  $scope.reset();
+
 }
