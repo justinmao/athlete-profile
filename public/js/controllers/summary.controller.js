@@ -15,6 +15,10 @@ function SummaryCtrl($scope, $location, ProfileService) {
     ProfileService.setActivePage('summary');
   }
 
+  $scope.edit = function(path) {
+    $location.path(path);
+  }
+
   $scope.reset();
 
 }

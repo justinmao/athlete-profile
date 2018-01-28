@@ -1,1 +1,1 @@
-#athlete-profle
+#athlete-profile

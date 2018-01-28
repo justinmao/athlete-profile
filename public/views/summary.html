@@ -27,6 +27,7 @@
       <td>{{ profile.basics.maritalStatus }}</td>
     </tr>
   </table>
+  <button type="button" ng-click="edit('/')">Edit</button>
 </section>
 <section>
   <h1>SPORTS</h1>
@@ -42,6 +43,7 @@
       <td>{{ sport.team }}</td>
     </tr>
   </table>
+  <button type="button" ng-click="edit('/sports')">Edit</button>
 </section>
 <section>
   <h1>EXTRA DETAILS</h1>
@@ -67,6 +69,7 @@
       <td>{{ profile.details.alcohol }}</td>
     </tr>
   </table>
+  <button type="button" ng-click="edit('/details')">Edit</button>
 </section>
 </div>
 
