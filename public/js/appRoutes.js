@@ -19,6 +19,10 @@ function appRoutes($routeProvider, $locationProvider) {
     .when('/summary', {
       templateUrl: 'views/summary.html',
       controller: 'SummaryCtrl'
+    })
+    .when('/list', {
+      templateUrl: 'views/list.html',
+      controller: 'ListCtrl'
     });
   $locationProvider.html5Mode(true);
 }

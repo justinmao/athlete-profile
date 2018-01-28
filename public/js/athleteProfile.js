@@ -3,5 +3,6 @@ angular.module('athleteProfile', [
   'sportsController',
   'detailsController',
   'summaryController',
-  'profileService',
+  'listController',
+  'profileService'
 ]);

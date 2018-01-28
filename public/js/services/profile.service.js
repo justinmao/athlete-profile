@@ -1,28 +1,8 @@
 angular
   .module('profileService', [])
-  .service('ProfileService', ['$http', ProfileService]);
+  .service('ProfileService', ['$http', '$q', ProfileService]);
 
-function ProfileService($http) {
-
-  // Initialize profile values
-  var profileData = {
-    'basics': {
-      'name': '',
-      'dob': new Date(),
-      'nationality': '',
-      'location': '',
-      'gender': '',
-      'maritalStatus': ''
-    },
-    'sports': [{}],
-    'details': {
-      'about': '',
-      'interests': [],
-      'charities': [],
-      'pets': false,
-      'alcohol': false
-    }
-  }
+function ProfileService($http, $q) {
 
   this.setBasics = function(data) {
     profileData.basics = data;
@@ -53,11 +33,42 @@ function ProfileService($http) {
   }
 
   this.submitProfile = function() {
-    $http.post('/api/profiles', JSON.stringify(profileData));
+    $http.post('/api/profiles', JSON.stringify(profileData)).then(
+      // TODO: Handle responses
+      function success(response) {},
+      function error(response) {}
+    );
   }
 
-  this.retrieveAllProfiles = function() {
-    // TODO: Get all previously-created profiles
+  this.retrieveAllProfiles = function(scope, callback) {
+    $http.get('/api/profiles').then(
+      function(res) {
+        callback(res.data);
+      }
+    );
   }
+
+  resetProfile = function() {
+    profileData = {
+      'basics': {
+        'name': '',
+        'dob': new Date(),
+        'nationality': '',
+        'location': '',
+        'gender': '',
+        'maritalStatus': ''
+      },
+      'sports': [{}],
+      'details': {
+        'about': '',
+        'interests': [],
+        'charities': [],
+        'pets': false,
+        'alcohol': false
+      }
+    }
+  }
+
+  resetProfile();
 
 }

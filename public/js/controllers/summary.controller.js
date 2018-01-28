@@ -9,5 +9,5 @@ function SummaryCtrl($scope, ProfileService) {
   $scope.submitProfile = function() {
     ProfileService.submitProfile();
   }
-  
+
 }
