@@ -76,6 +76,7 @@ function SportsCtrl($scope, $location, ProfileService) {
   $scope.save = function(isValid) {
     if (isValid) {
       ProfileService.setSports($scope.data);
+      ProfileService.setPageCompleted('sports');
       $location.path('/details');
     }
   }

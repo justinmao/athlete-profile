@@ -1,13 +1,14 @@
 angular
   .module('summaryController', [])
-  .controller('SummaryCtrl', ['$scope', 'ProfileService', SummaryCtrl]);
+  .controller('SummaryCtrl', ['$scope', '$location', 'ProfileService', SummaryCtrl]);
 
-function SummaryCtrl($scope, ProfileService) {
+function SummaryCtrl($scope, $location, ProfileService) {
 
   $scope.profile = ProfileService.getProfile();
 
   $scope.submitProfile = function() {
     ProfileService.submitProfile();
+    $location.path('/list');
   }
 
   $scope.reset = function() {

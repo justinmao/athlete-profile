@@ -2,6 +2,10 @@
 <html>
 <head>
   <base href="/">
+  <title>OpenSponsorship Athlete Profile</title>
+
+  <link rel="stylesheet" href="css/index.css">
+
   <script src="libs/angular/angular.js"></script>
   <script src="libs/angular-route/angular-route.js"></script>
 
@@ -22,13 +26,39 @@
 </head>
 <body ng-app="app">
   <nav ng-controller="NavCtrl">
-    <a href="/">Basics</a>
-    <a href="/sports">Sports</a>
-    <a href="/details">Details</a>
-    <a href="/summary">Summary</a>
-    <a href="/list">List</a>
+    <div class="nav-page">
+      <div class="circle" ng-class="{
+        'circle-active': pagingInfo.basics.active,
+        'circle-completed': pagingInfo.basics.completed
+      }">
+      </div>
+      <p>Basics</p>
+    </div>
+    <div class="nav-page">
+      <div class="circle" ng-class="{
+        'circle-active': pagingInfo.sports.active,
+        'circle-completed': pagingInfo.sports.completed
+      }">
+      </div>
+      <p>Sports</p>
+    </div>
+    <div class="nav-page">
+      <div class="circle" ng-class="{
+        'circle-active': pagingInfo.details.active,
+        'circle-completed': pagingInfo.details.completed
+      }">
+      </div>
+      <p>Details</p>
+    </div>
+    <div class="nav-page">
+      <div class="circle" ng-class="{
+        'circle-active': pagingInfo.summary.active,
+        'circle-completed': pagingInfo.summary.completed
+      }">
+      </div>
+      <p>Summary</p>
+    </div>
   </nav>
-  <p>Hello!</p>
-  <div ng-view></div>
+  <div id="container" ng-view></div>
 </body>
 </html>

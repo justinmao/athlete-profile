@@ -66,10 +66,11 @@ function ProfileService($http, $q, $rootScope) {
 
   // Backend connection
   this.submitProfile = function() {
+    console.log(profileData);
     $http.post('/api/profiles', JSON.stringify(profileData)).then(
       // TODO: Handle responses
       function success(response) {},
-      function error(response) {}
+      function error(response) { console.log(response); }
     );
   }
 

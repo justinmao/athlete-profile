@@ -22,6 +22,7 @@ function BasicsCtrl($scope, $location, ProfileService) {
   $scope.save = function(isValid) {
     if (isValid) {
       ProfileService.setBasics($scope.data);
+      ProfileService.setPageCompleted('basics');
       $location.path('/sports');
     }
   }

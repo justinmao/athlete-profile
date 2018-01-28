@@ -25,6 +25,7 @@ function DetailsCtrl($scope, $location, ProfileService) {
   $scope.save = function(isValid) {
     if (isValid) {
       ProfileService.setDetails($scope.data);
+      ProfileService.setPageCompleted('details');
       $location.path('/summary');
     }
   }

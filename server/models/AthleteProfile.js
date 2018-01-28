@@ -21,7 +21,7 @@ module.exports = mongoose.model('AthleteProfile', {
     }],
     charities: [{
       name: String,
-      years: Number
+      years: String
     }],
     pets: Boolean,
     alcohol: Boolean

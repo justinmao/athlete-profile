@@ -1,5 +1,75 @@
-<p>{{ profile }}</p>
+<div>
+<section>
+  <h1>BASIC INFORMATION</h1>
+  <table>
+    <tr>
+      <td>NAME</td>
+      <td>{{ profile.basics.name }}</td>
+    </tr>
+    <tr>
+      <td>DATE OF BIRTH</td>
+      <td ng-bind="profile.basics.dob | date:'MM/dd/yyyy'"></td>
+    </tr>
+    <tr>
+      <td>NATIONALITY</td>
+      <td>{{ profile.basics.nationality }}</td>
+    </tr>
+    <tr>
+      <td>LOCATION</td>
+      <td>{{ profile.basics.location }}</td>
+    </tr>
+    <tr>
+      <td>GENDER</td>
+      <td>{{ profile.basics.gender }}</td>
+    </tr>
+    <tr>
+      <td>MARITAL STATUS</td>
+      <td>{{ profile.basics.maritalStatus }}</td>
+    </tr>
+  </table>
+</section>
+<section>
+  <h1>SPORTS</h1>
+  <table>
+    <tr>
+      <th>SPORT</th>
+      <th>ASSOCIATION</th>
+      <th>TEAM</th>
+    </tr>
+    <tr ng-repeat="sport in profile.sports">
+      <td>{{ sport.name }}</td>
+      <td>{{ sport.association }}</td>
+      <td>{{ sport.team }}</td>
+    </tr>
+  </table>
+</section>
+<section>
+  <h1>EXTRA DETAILS</h1>
+  <table>
+    <tr>
+      <td>ABOUT</td>
+      <td>{{ profile.details.about }}</td>
+    </tr>
+    <tr>
+      <td>INTERESTS</td>
+      <td><ul><li ng-repeat="interest in profile.details.interests">{{ interest.name }}</li></ul></td>
+    </tr>
+    <tr>
+      <td>CHARITIES</td>
+      <td><ul><li ng-repeat="charity in profile.details.charities">{{ charity.name }} for {{ charity.years }} years</li></ul></td>
+    </tr>
+    <tr>
+      <td>PETS</td>
+      <td>{{ profile.details.pets }}</td>
+    </tr>
+    <tr>
+      <td>DRINKS ALCOHOL</td>
+      <td>{{ profile.details.alcohol }}</td>
+    </tr>
+  </table>
+</section>
+</div>
+
+<br>
 
 <button type="button" ng-click="submitProfile()">Submit</button>
-
-<button type="button" ng-click="retrieveAllProfiles()">Get All</button>
