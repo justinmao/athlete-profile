@@ -19,7 +19,7 @@ function ProfileService() {
       'about': '',
       'interests': [],
       'charities': [],
-      'pets': [],
+      'pets': false,
       'alcohol': false
     }
   }

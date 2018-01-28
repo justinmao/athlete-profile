@@ -1,1 +1,44 @@
-<p>{{ msg }}</p>
+<form id="detailsForm" novalidate>
+
+  <div>
+    <label>ABOUT</label>
+    <textarea rows="6" cols="50" ng-model="data.about"></textarea>
+  </div>
+
+  <label>INTERESTS</label>
+  <div ng-repeat="interest in data.interests">
+    <div>
+      <input type="text" ng-model="interest.name" required>
+    </div>
+    <button type="button" ng-click="deleteInterest(interest)">-</button>
+  </div>
+  <button type="button" ng-click="addInterest()">+</button>
+
+  <label>CHARITIES</label>
+  <div ng-repeat="charity in data.charities">
+    <div>
+      <label>NAME</label>
+      <input type="text" ng-model="charity.name" required>
+    </div>
+    <div>
+      <label>YEARS</label>
+      <input type="text" ng-model="charity.years" required>
+    </div>
+    <button type="button" ng-click="deleteCharity(charity)">-</button>
+  </div>
+  <button type="button" ng-click="addCharity()">+</button>
+
+  <div>
+    <label>PETS</label>
+    <input type="checkbox" ng-model="data.pets">
+  </div>
+
+  <div>
+    <label>ALCOHOL</label>
+    <input type="checkbox" ng-model="data.alcohol">
+  </div>
+
+  <button type="submit" ng-click="save(data)">Submit</button>
+</form>
+
+{{ data }}
