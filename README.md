@@ -16,3 +16,9 @@ This project can be run locally:
 ### Minor Issues
 * Design not quite up to par
 * Modules define their functions in global space (should encase each module in a singly-run function)
+* Link to create a new profile from `/list` should reload the page instead of just changing the view
+* Deleting interests/charities on `/details` does not work -- e.g.
+`$scope.data.splice(i, 1)`
+should instead be
+`$scope.data.interests.splice(i, 1);`
+The same function is properly implemented in `/sports`.
