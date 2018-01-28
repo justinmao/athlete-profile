@@ -7,6 +7,18 @@ function appRoutes($routeProvider, $locationProvider) {
     .when('/', {
       templateUrl: 'views/basics.html',
       controller: 'BasicsCtrl'
+    })
+    .when('/sports', {
+      templateUrl: 'views/sports.html',
+      controller: 'SportsCtrl'
+    })
+    .when('/details', {
+      templateUrl: 'views/details.html',
+      controller: 'DetailsCtrl'
+    })
+    .when('/summary', {
+      templateUrl: 'views/summary.html',
+      controller: 'SummaryCtrl'
     });
   $locationProvider.html5Mode(true);
 }
