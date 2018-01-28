@@ -1,8 +1,8 @@
 angular
   .module('basicsController', [])
-  .controller('BasicsCtrl', ['$scope', 'ProfileService', BasicsCtrl]);
+  .controller('BasicsCtrl', ['$scope', '$location', 'ProfileService', BasicsCtrl]);
 
-function BasicsCtrl($scope, ProfileService) {
+function BasicsCtrl($scope, $location, ProfileService) {
 
   $scope.genderList = [
     'Male',
@@ -19,8 +19,11 @@ function BasicsCtrl($scope, ProfileService) {
     'Widowed'
   ];
 
-  $scope.save = function(data) {
-    ProfileService.setBasics(data);
+  $scope.save = function(isValid) {
+    if (isValid) {
+      ProfileService.setBasics($scope.data);
+      $location.path('/sports');
+    }
   }
 
   var reset = function() {

@@ -37,9 +37,7 @@ function ProfileService($http, $q, $rootScope) {
 
   // Data system
   this.setBasics = function(data) {
-    console.log(profileData.basics);
     profileData.basics = data;
-    console.log(profileData.basics);
   }
 
   this.setSports = function(data) {

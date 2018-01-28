@@ -1,8 +1,8 @@
 angular
   .module('sportsController', [])
-  .controller('SportsCtrl', ['$scope', 'ProfileService', SportsCtrl]);
+  .controller('SportsCtrl', ['$scope', '$location', 'ProfileService', SportsCtrl]);
 
-function SportsCtrl($scope, ProfileService) {
+function SportsCtrl($scope, $location, ProfileService) {
 
   // TODO: Give each sport an id and disable already chosen sports
   $scope.sportsList = [
@@ -70,6 +70,13 @@ function SportsCtrl($scope, ProfileService) {
     if ($scope.data.length > 1) {
       var i = $scope.data.indexOf(sport);
       $scope.data.splice(i, 1);
+    }
+  }
+
+  $scope.save = function(isValid) {
+    if (isValid) {
+      ProfileService.setSports($scope.data);
+      $location.path('/details');
     }
   }
 

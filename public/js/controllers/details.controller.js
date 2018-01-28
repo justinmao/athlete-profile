@@ -1,8 +1,8 @@
 angular
   .module('detailsController', [])
-  .controller('DetailsCtrl', ['$scope', 'ProfileService', DetailsCtrl]);
+  .controller('DetailsCtrl', ['$scope', '$location', 'ProfileService', DetailsCtrl]);
 
-function DetailsCtrl($scope, ProfileService) {
+function DetailsCtrl($scope, $location, ProfileService) {
 
   $scope.addInterest = function() {
     $scope.data.interests.push({});
@@ -20,6 +20,13 @@ function DetailsCtrl($scope, ProfileService) {
   $scope.deleteCharity = function(charity) {
     var i = $scope.data.charities.indexOf(charity);
     $scope.data.splice(i, 1);
+  }
+
+  $scope.save = function(isValid) {
+    if (isValid) {
+      ProfileService.setDetails($scope.data);
+      $location.path('/summary');
+    }
   }
 
   $scope.reset = function() {
