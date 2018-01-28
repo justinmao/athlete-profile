@@ -1,1 +1,18 @@
-<p>{{ msg }}</p>
+<form novalidate>
+  <div ng-repeat="sport in data">
+    <select ng-model="sport.name"
+            ng-options="item for item in sportsList">
+    </select>
+    <div>
+      <label>Association</label>
+      <input type="text" ng-model="sport.association" required>
+    </div>
+    <div>
+      <label>Team</label>
+      <input type="text" ng-model="sport.team" required>
+    </div>
+    <button type="button" ng-click="deleteSport(sport)">-</button>
+  </div>
+  <button type="button" ng-click="addSport()">+</button>
+  <button type="submit" ng-click="save(data)">Submit</button>
+</form>

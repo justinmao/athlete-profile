@@ -1,13 +1,33 @@
 angular
   .module('basicsController', [])
-  .controller('BasicsCtrl', ['$scope', BasicsCtrl]);
+  .controller('BasicsCtrl', ['$scope', 'ProfileService', BasicsCtrl]);
 
-function BasicsCtrl($scope) {
+function BasicsCtrl($scope, ProfileService) {
 
   $scope.genderList = [
     'Male',
     'Female',
     'Other'
   ];
+
+  $scope.maritalStatusList = [
+    'Single',
+    'Married',
+    'Common Law',
+    'Separated',
+    'Divorced',
+    'Widowed'
+  ];
+
+  $scope.save = function(data) {
+    ProfileService.setBasics(data);
+  }
+
+  $scope.reset = function() {
+    $scope.data = ProfileService.getBasics();
+  }
+
+  // Reset to saved values upon re-entry
+  $scope.reset();
 
 }

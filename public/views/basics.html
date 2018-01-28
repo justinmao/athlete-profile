@@ -22,5 +22,12 @@
             ng-options="gender for gender in genderList">
     </select>
   </div>
+  <div>
+    <label>MARITAL STATUS</label>
+    <select ng-model="data.maritalStatus"
+            ng-init="data.maritalStatus = maritalStatusList[0]"
+            ng-options="maritalStatus for maritalStatus in maritalStatusList">
+    </select>
+  </div>
   <button type="submit" ng-click="save(data)">Submit</button>
 </form>
