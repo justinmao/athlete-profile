@@ -1,7 +1,9 @@
 angular
   .module('summaryController', [])
-  .controller('SummaryCtrl', ['$scope', SummaryCtrl]);
+  .controller('SummaryCtrl', ['$scope', 'ProfileService', SummaryCtrl]);
 
-function SummaryCtrl($scope) {
-  $scope.msg = 'Summary Controller';
+function SummaryCtrl($scope, ProfileService) {
+
+  $scope.profile = ProfileService.getProfile();
+
 }
