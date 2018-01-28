@@ -6,4 +6,8 @@ function SummaryCtrl($scope, ProfileService) {
 
   $scope.profile = ProfileService.getProfile();
 
+  $scope.submitProfile = function() {
+    ProfileService.submitProfile();
+  }
+  
 }

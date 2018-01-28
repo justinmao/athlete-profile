@@ -1,8 +1,8 @@
 angular
   .module('profileService', [])
-  .service('ProfileService', ProfileService);
+  .service('ProfileService', ['$http', ProfileService]);
 
-function ProfileService() {
+function ProfileService($http) {
 
   // Initialize profile values
   var profileData = {
@@ -53,7 +53,7 @@ function ProfileService() {
   }
 
   this.submitProfile = function() {
-    // TODO: Submit profile to backend
+    $http.post('/api/profiles', JSON.stringify(profileData));
   }
 
   this.retrieveAllProfiles = function() {
