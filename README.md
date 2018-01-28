@@ -11,6 +11,7 @@ This project can be run locally:
 
 * List of all profiles not properly formatted (raw JSON is displayed instead)
 * Users may navigate to form pages by url, starting the form in the middle
+* PUT not implemented
 
 ### Minor Issues
 * Design not quite up to par
